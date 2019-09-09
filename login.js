@@ -52,18 +52,15 @@ function success(text) {
 function login(){
 var request = new XMLHttpRequest(); // 新建XMLHttpRequest对象
 
-request.onreadystatechange = function () { // 状态发生变化时，函数被回调
-    if (request.readyState === 4) { // 成功完成
-        // 判断响应结果:
+request.onreadystatechange = function () {           // 状态发生变化时，函数被回调
+    if (request.readyState === 4) {                                   // 成功完成
         if (request.status === 200) {
-            // 成功，通过responseText拿到响应的文本:
-            return success(request.responseText);
+            return success(request.responseText);         // 成功，通过responseText拿到响应的文本:
         } else {
-            // 失败，根据响应码判断失败原因:
-            return success(request.status);
+            return success(request.status);                        // 失败，根据响应码判断失败原因:
         }
     } else {
-        // HTTP请求还在继续...
+        //alert("请求还在继续");
     }
 }
 
